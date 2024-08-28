@@ -33,14 +33,14 @@ namespace Calculadora
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             btnUm = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
-            button9 = new Button();
+            btnDois = new Button();
+            btnTres = new Button();
+            btnQuatro = new Button();
+            btnCinco = new Button();
+            btnSeis = new Button();
+            btnSete = new Button();
+            btnOito = new Button();
+            btnNove = new Button();
             btnZero = new Button();
             btnPonto = new Button();
             btnSoma = new Button();
@@ -72,116 +72,123 @@ namespace Calculadora
             // 
             // btnDois
             // 
-            button2.BackColor = Color.FromArgb(192, 192, 255);
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderColor = Color.Silver;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Roboto Light", 12F);
-            button2.Location = new Point(93, 145);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 41);
-            button2.TabIndex = 2;
-            button2.Text = "2";
-            button2.UseVisualStyleBackColor = false;
+            btnDois.BackColor = Color.FromArgb(192, 192, 255);
+            btnDois.Cursor = Cursors.Hand;
+            btnDois.FlatAppearance.BorderColor = Color.Silver;
+            btnDois.FlatStyle = FlatStyle.Flat;
+            btnDois.Font = new Font("Roboto Light", 12F);
+            btnDois.Location = new Point(93, 145);
+            btnDois.Name = "btnDois";
+            btnDois.Size = new Size(75, 41);
+            btnDois.TabIndex = 2;
+            btnDois.Text = "2";
+            btnDois.UseVisualStyleBackColor = false;
+            btnDois.Click += btnDois_Click;
             // 
             // btnTres
             // 
-            button3.BackColor = Color.FromArgb(192, 192, 255);
-            button3.Cursor = Cursors.Hand;
-            button3.FlatAppearance.BorderColor = Color.Silver;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Roboto Light", 12F);
-            button3.Location = new Point(174, 145);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 41);
-            button3.TabIndex = 3;
-            button3.Text = "3";
-            button3.UseVisualStyleBackColor = false;
+            btnTres.BackColor = Color.FromArgb(192, 192, 255);
+            btnTres.Cursor = Cursors.Hand;
+            btnTres.FlatAppearance.BorderColor = Color.Silver;
+            btnTres.FlatStyle = FlatStyle.Flat;
+            btnTres.Font = new Font("Roboto Light", 12F);
+            btnTres.Location = new Point(174, 145);
+            btnTres.Name = "btnTres";
+            btnTres.Size = new Size(75, 41);
+            btnTres.TabIndex = 3;
+            btnTres.Text = "3";
+            btnTres.UseVisualStyleBackColor = false;
+            btnTres.Click += btnTres_Click;
             // 
             // btnQuatro
             // 
-            button4.BackColor = Color.FromArgb(192, 192, 255);
-            button4.Cursor = Cursors.Hand;
-            button4.FlatAppearance.BorderColor = Color.Silver;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Roboto Light", 12F);
-            button4.Location = new Point(12, 192);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 41);
-            button4.TabIndex = 4;
-            button4.Text = "4";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            btnQuatro.BackColor = Color.FromArgb(192, 192, 255);
+            btnQuatro.Cursor = Cursors.Hand;
+            btnQuatro.FlatAppearance.BorderColor = Color.Silver;
+            btnQuatro.FlatStyle = FlatStyle.Flat;
+            btnQuatro.Font = new Font("Roboto Light", 12F);
+            btnQuatro.Location = new Point(12, 192);
+            btnQuatro.Name = "btnQuatro";
+            btnQuatro.Size = new Size(75, 41);
+            btnQuatro.TabIndex = 4;
+            btnQuatro.Text = "4";
+            btnQuatro.UseVisualStyleBackColor = false;
+            btnQuatro.Click += btnQuatro_Click;
             // 
             // btnCinco
             // 
-            button5.BackColor = Color.FromArgb(192, 192, 255);
-            button5.Cursor = Cursors.Hand;
-            button5.FlatAppearance.BorderColor = Color.Silver;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Roboto Light", 12F);
-            button5.Location = new Point(93, 192);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 41);
-            button5.TabIndex = 5;
-            button5.Text = "5";
-            button5.UseVisualStyleBackColor = false;
+            btnCinco.BackColor = Color.FromArgb(192, 192, 255);
+            btnCinco.Cursor = Cursors.Hand;
+            btnCinco.FlatAppearance.BorderColor = Color.Silver;
+            btnCinco.FlatStyle = FlatStyle.Flat;
+            btnCinco.Font = new Font("Roboto Light", 12F);
+            btnCinco.Location = new Point(93, 192);
+            btnCinco.Name = "btnCinco";
+            btnCinco.Size = new Size(75, 41);
+            btnCinco.TabIndex = 5;
+            btnCinco.Text = "5";
+            btnCinco.UseVisualStyleBackColor = false;
+            btnCinco.Click += btnCinco_Click;
             // 
             // btnSeis
             // 
-            button6.BackColor = Color.FromArgb(192, 192, 255);
-            button6.Cursor = Cursors.Hand;
-            button6.FlatAppearance.BorderColor = Color.Silver;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Roboto Light", 12F);
-            button6.Location = new Point(174, 192);
-            button6.Name = "button6";
-            button6.Size = new Size(75, 41);
-            button6.TabIndex = 6;
-            button6.Text = "6";
-            button6.UseVisualStyleBackColor = false;
+            btnSeis.BackColor = Color.FromArgb(192, 192, 255);
+            btnSeis.Cursor = Cursors.Hand;
+            btnSeis.FlatAppearance.BorderColor = Color.Silver;
+            btnSeis.FlatStyle = FlatStyle.Flat;
+            btnSeis.Font = new Font("Roboto Light", 12F);
+            btnSeis.Location = new Point(174, 192);
+            btnSeis.Name = "btnSeis";
+            btnSeis.Size = new Size(75, 41);
+            btnSeis.TabIndex = 6;
+            btnSeis.Text = "6";
+            btnSeis.UseVisualStyleBackColor = false;
+            btnSeis.Click += btnSeis_Click;
             // 
             // btnSete
             // 
-            button7.BackColor = Color.FromArgb(192, 192, 255);
-            button7.Cursor = Cursors.Hand;
-            button7.FlatAppearance.BorderColor = Color.Silver;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Roboto Light", 12F);
-            button7.Location = new Point(12, 239);
-            button7.Name = "button7";
-            button7.Size = new Size(75, 41);
-            button7.TabIndex = 7;
-            button7.Text = "7";
-            button7.UseVisualStyleBackColor = false;
+            btnSete.BackColor = Color.FromArgb(192, 192, 255);
+            btnSete.Cursor = Cursors.Hand;
+            btnSete.FlatAppearance.BorderColor = Color.Silver;
+            btnSete.FlatStyle = FlatStyle.Flat;
+            btnSete.Font = new Font("Roboto Light", 12F);
+            btnSete.Location = new Point(12, 239);
+            btnSete.Name = "btnSete";
+            btnSete.Size = new Size(75, 41);
+            btnSete.TabIndex = 7;
+            btnSete.Text = "7";
+            btnSete.UseVisualStyleBackColor = false;
+            btnSete.Click += btnSete_Click_1;
             // 
             // btnOito
             // 
-            button8.BackColor = Color.FromArgb(192, 192, 255);
-            button8.Cursor = Cursors.Hand;
-            button8.FlatAppearance.BorderColor = Color.Silver;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Font = new Font("Roboto Light", 12F);
-            button8.Location = new Point(93, 239);
-            button8.Name = "button8";
-            button8.Size = new Size(75, 41);
-            button8.TabIndex = 8;
-            button8.Text = "8";
-            button8.UseVisualStyleBackColor = false;
+            btnOito.BackColor = Color.FromArgb(192, 192, 255);
+            btnOito.Cursor = Cursors.Hand;
+            btnOito.FlatAppearance.BorderColor = Color.Silver;
+            btnOito.FlatStyle = FlatStyle.Flat;
+            btnOito.Font = new Font("Roboto Light", 12F);
+            btnOito.Location = new Point(93, 239);
+            btnOito.Name = "btnOito";
+            btnOito.Size = new Size(75, 41);
+            btnOito.TabIndex = 8;
+            btnOito.Text = "8";
+            btnOito.UseVisualStyleBackColor = false;
+            btnOito.Click += btnOito_Click;
             // 
             // btnNove
             // 
-            button9.BackColor = Color.FromArgb(192, 192, 255);
-            button9.Cursor = Cursors.Hand;
-            button9.FlatAppearance.BorderColor = Color.Silver;
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Font = new Font("Roboto Light", 12F);
-            button9.Location = new Point(174, 239);
-            button9.Name = "button9";
-            button9.Size = new Size(75, 41);
-            button9.TabIndex = 9;
-            button9.Text = "9";
-            button9.UseVisualStyleBackColor = false;
+            btnNove.BackColor = Color.FromArgb(192, 192, 255);
+            btnNove.Cursor = Cursors.Hand;
+            btnNove.FlatAppearance.BorderColor = Color.Silver;
+            btnNove.FlatStyle = FlatStyle.Flat;
+            btnNove.Font = new Font("Roboto Light", 12F);
+            btnNove.Location = new Point(174, 239);
+            btnNove.Name = "btnNove";
+            btnNove.Size = new Size(75, 41);
+            btnNove.TabIndex = 9;
+            btnNove.Text = "9";
+            btnNove.UseVisualStyleBackColor = false;
+            btnNove.Click += btnNove_Click;
             // 
             // btnZero
             // 
@@ -204,7 +211,7 @@ namespace Calculadora
             btnPonto.Cursor = Cursors.Hand;
             btnPonto.FlatAppearance.BorderColor = Color.Silver;
             btnPonto.FlatStyle = FlatStyle.Flat;
-            btnPonto.Font = new Font("Roboto Light", 12F);
+            btnPonto.Font = new Font("Roboto Light", 20F);
             btnPonto.Location = new Point(174, 286);
             btnPonto.Name = "btnPonto";
             btnPonto.Size = new Size(75, 41);
@@ -215,7 +222,7 @@ namespace Calculadora
             // 
             // btnSoma
             // 
-            btnSoma.BackColor = Color.FromArgb(192, 192, 255);
+            btnSoma.BackColor = Color.FromArgb(128, 128, 255);
             btnSoma.Cursor = Cursors.Hand;
             btnSoma.FlatAppearance.BorderColor = Color.Silver;
             btnSoma.FlatStyle = FlatStyle.Flat;
@@ -230,7 +237,7 @@ namespace Calculadora
             // 
             // btnSubtrai
             // 
-            btnSubtrai.BackColor = Color.FromArgb(192, 192, 255);
+            btnSubtrai.BackColor = Color.FromArgb(128, 128, 255);
             btnSubtrai.Cursor = Cursors.Hand;
             btnSubtrai.FlatAppearance.BorderColor = Color.Silver;
             btnSubtrai.FlatStyle = FlatStyle.Flat;
@@ -245,7 +252,7 @@ namespace Calculadora
             // 
             // btnMulti
             // 
-            btnMulti.BackColor = Color.FromArgb(192, 192, 255);
+            btnMulti.BackColor = Color.FromArgb(128, 128, 255);
             btnMulti.Cursor = Cursors.Hand;
             btnMulti.FlatAppearance.BorderColor = Color.Silver;
             btnMulti.FlatStyle = FlatStyle.Flat;
@@ -260,7 +267,7 @@ namespace Calculadora
             // 
             // btnDivide
             // 
-            btnDivide.BackColor = Color.FromArgb(192, 192, 255);
+            btnDivide.BackColor = Color.FromArgb(128, 128, 255);
             btnDivide.Cursor = Cursors.Hand;
             btnDivide.FlatAppearance.BorderColor = Color.Silver;
             btnDivide.FlatStyle = FlatStyle.Flat;
@@ -296,9 +303,10 @@ namespace Calculadora
             display.Font = new Font("Roboto Light", 20F);
             display.ForeColor = SystemColors.GrayText;
             display.Location = new Point(12, 12);
+            display.MaxLength = 30;
             display.Multiline = true;
             display.Name = "display";
-            display.PlaceholderText = "0";
+            display.PlaceholderText = "00";
             display.ReadOnly = true;
             display.RightToLeft = RightToLeft.No;
             display.Size = new Size(318, 74);
@@ -338,7 +346,7 @@ namespace Calculadora
             // 
             // btnResult
             // 
-            btnResult.BackColor = Color.FromArgb(192, 192, 255);
+            btnResult.BackColor = Color.FromArgb(128, 128, 255);
             btnResult.Cursor = Cursors.Hand;
             btnResult.FlatAppearance.BorderColor = Color.Silver;
             btnResult.FlatStyle = FlatStyle.Flat;
@@ -385,14 +393,14 @@ namespace Calculadora
             Controls.Add(btnSoma);
             Controls.Add(btnPonto);
             Controls.Add(btnZero);
-            Controls.Add(button9);
-            Controls.Add(button8);
-            Controls.Add(button7);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(btnNove);
+            Controls.Add(btnOito);
+            Controls.Add(btnSete);
+            Controls.Add(btnSeis);
+            Controls.Add(btnCinco);
+            Controls.Add(btnQuatro);
+            Controls.Add(btnTres);
+            Controls.Add(btnDois);
             Controls.Add(btnUm);
             Font = new Font("Segoe UI", 9F);
             ForeColor = SystemColors.Desktop;
@@ -407,17 +415,22 @@ namespace Calculadora
             PerformLayout();
         }
 
+        private void BtnSete_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         private Button btnUm;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private Button button7;
-        private Button button8;
-        private Button button9;
+        private Button btnDois;
+        private Button btnTres;
+        private Button btnQuatro;
+        private Button btnCinco;
+        private Button btnSeis;
+        private Button btnSete;
+        private Button btnOito;
+        private Button btnNove;
         private Button btnZero;
         private Button btnPonto;
         private Button btnSoma;
