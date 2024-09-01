@@ -1,9 +1,11 @@
+using System.Globalization;
+
 namespace Calculadora
 {
     public partial class Form1 : Form
     {
-        Double primeiroValor, segundoValor, resultado;
-        String operador, input;
+        Double? primeiroValor, segundoValor, resultado;
+        String operador, input, sinal;
 
         public Form1()
         {
@@ -23,10 +25,12 @@ namespace Calculadora
         private void btnLimpa_Click(object sender, EventArgs e)
         {
             //Apaga os valores e exibe o input
-            input = "";
-            primeiroValor = 0;
-            segundoValor = 0;
-            operador = "";
+            input = string.Empty;
+            primeiroValor = null;
+            segundoValor = null;
+            resultado = null;
+            operador = string.Empty;
+            sinal = string.Empty;
             display.Text = input;
         }
 
@@ -48,8 +52,7 @@ namespace Calculadora
 
         private void btnDois_Click(object sender, EventArgs e)
         {
-            //primeiroValor += 2;
-            //display.Text = primeiroValor;
+
         }
 
         private void btnTres_Click(object sender, EventArgs e)
@@ -93,7 +96,15 @@ namespace Calculadora
 
         private void btnSinais_Click(object sender, EventArgs e)
         {
-            //Sinais
+            if (String.IsNullOrEmpty(sinal) || sinal == "-")
+            {
+                sinal = "+";
+            }
+            else
+            {
+                sinal = "-";
+            }
+            display.Text = sinal;
         }
 
         private void btnPonto_Click(object sender, EventArgs e)
@@ -103,19 +114,15 @@ namespace Calculadora
 
         private void btnSoma_Click(object sender, EventArgs e)
         {
-            //Verifica se NÃO está vazio
-            if (!String.IsNullOrEmpty(input))
+            operador = "+";
+            display.Text = operador;
+
+            if (!primeiroValor.HasValue)
             {
-                //Verifica se o operador ESTÁ vazio
-                if (String.IsNullOrEmpty(operador))
-                {
-                    primeiroValor = Double.Parse(input);
-                    operador = "+";
-                    input = "";
-                }
-                display.Text = operador;
+                primeiroValor = Double.Parse(input);
+                input = string.Empty;
             }
-        }
+        } 
 
         private void btnSubtrai_Click(object sender, EventArgs e)
         {
@@ -134,8 +141,14 @@ namespace Calculadora
 
         private void btnResult_Click(object sender, EventArgs e)
         {
-            segundoValor = Double.Parse(input);
-            display.Text = primeiroValor.ToString() + operador + segundoValor.ToString();
+            //Verifica se a variável "segundoValor" é "vazia" e se a variável "operador" está vazia
+            if (!segundoValor.HasValue && !String.IsNullOrEmpty(operador))
+            {
+                //Arrumar, erro quando tenta ver o resultado com segundoValor vazio: [1] [+] [ ] = [ ]
+                segundoValor = Double.Parse(input);
+                resultado = primeiroValor + segundoValor;
+                display.Text = resultado.ToString();
+            }
         }
     }
 }
