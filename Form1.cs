@@ -1,11 +1,12 @@
 using System.Globalization;
+using System.Collections.Generic;
 
 namespace Calculadora
 {
     public partial class Form1 : Form
     {
-        Double? primeiroValor, segundoValor, resultado;
-        String operador, input, sinal;
+        List<Double> valores = new List<double>();
+        String operador, input, sinal, resultado;
 
         public Form1()
         {
@@ -26,12 +27,12 @@ namespace Calculadora
         {
             //Apaga os valores e exibe o input
             input = string.Empty;
-            primeiroValor = null;
-            segundoValor = null;
             resultado = null;
             operador = string.Empty;
             sinal = string.Empty;
             display.Text = input;
+
+            valores.Clear();
         }
 
         private void btnApagar_Click(object sender, EventArgs e)
@@ -52,46 +53,55 @@ namespace Calculadora
 
         private void btnDois_Click(object sender, EventArgs e)
         {
-
+            input += "2";
+            display.Text = input;
         }
 
         private void btnTres_Click(object sender, EventArgs e)
         {
-            //Tres
+            input += "3";
+            display.Text = input;
         }
 
         private void btnQuatro_Click(object sender, EventArgs e)
         {
-            //Quatro
+            input += "4";
+            display.Text = input;
         }
 
         private void btnCinco_Click(object sender, EventArgs e)
         {
-            //Cinco
+            input += "5";
+            display.Text = input;
         }
         private void btnSeis_Click(object sender, EventArgs e)
         {
-            //Seis
+            input += "6";
+            display.Text = input;
         }
 
         private void btnSete_Click_1(object sender, EventArgs e)
         {
-            //Sete
+            input += "7";
+            display.Text = input;
         }
 
         private void btnOito_Click(object sender, EventArgs e)
         {
-            //Oito
+            input += "8";
+            display.Text = input;
         }
 
         private void btnNove_Click(object sender, EventArgs e)
         {
-            //Nove
+            input += "9";
+            display.Text = input;
         }
 
         private void btnZero_Click(object sender, EventArgs e)
         {
-            //Zero
+            input += "0";
+            display.Text = input;
         }
 
         private void btnSinais_Click(object sender, EventArgs e)
@@ -117,11 +127,8 @@ namespace Calculadora
             operador = "+";
             display.Text = operador;
 
-            if (!primeiroValor.HasValue)
-            {
-                primeiroValor = Double.Parse(input);
-                input = string.Empty;
-            }
+            valores.Add(Double.Parse(input));
+            input = string.Empty;
         } 
 
         private void btnSubtrai_Click(object sender, EventArgs e)
@@ -141,14 +148,10 @@ namespace Calculadora
 
         private void btnResult_Click(object sender, EventArgs e)
         {
-            //Verifica se a variável "segundoValor" é "vazia" e se a variável "operador" está vazia
-            if (!segundoValor.HasValue && !String.IsNullOrEmpty(operador))
-            {
-                //Arrumar, erro quando tenta ver o resultado com segundoValor vazio: [1] [+] [ ] = [ ]
-                segundoValor = Double.Parse(input);
-                resultado = primeiroValor + segundoValor;
-                display.Text = resultado.ToString();
-            }
-        }
+            //fazer com que seja posivel fazer operações com os valores da lista
+            valores.Add(Double.Parse(input));
+            input = string.Empty;
+            display.Text = string.Join(operador, valores);
+        }       
     }
 }
