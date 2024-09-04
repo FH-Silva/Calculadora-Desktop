@@ -1,12 +1,14 @@
 using System.Globalization;
 using System.Collections.Generic;
+using System.Drawing.Text;
 
 namespace Calculadora
 {
     public partial class Form1 : Form
     {
         List<Double> valores = new List<double>();
-        String operador, input, sinal, resultado;
+        Double? resultado;
+        String operador, input, sinal;
 
         public Form1()
         {
@@ -133,25 +135,54 @@ namespace Calculadora
 
         private void btnSubtrai_Click(object sender, EventArgs e)
         {
-            display.Text = "-";
+            operador = "-";
+            display.Text = operador;
+
+            valores.Add(Double.Parse(input));
+            input = string.Empty;
         }
 
         private void btnMulti_Click(object sender, EventArgs e)
         {
-            display.Text = "*";
+            operador = "*";
+            display.Text = operador;
+
+            valores.Add(Double.Parse(input));
+            input = string.Empty;
         }
 
         private void btnDivide_Click(object sender, EventArgs e)
         {
-            display.Text = "/";
+            operador = "/";
+            display.Text = operador;
+
+            valores.Add(Double.Parse(input));
+            input = string.Empty;
         }
 
         private void btnResult_Click(object sender, EventArgs e)
         {
-            //fazer com que seja posivel fazer operações com os valores da lista
+            //fazer com que seja possivel fazer operações com os valores da lista
             valores.Add(Double.Parse(input));
             input = string.Empty;
-            display.Text = string.Join(operador, valores);
-        }       
+            //display.Text = string.Join(operador, valores);
+
+            switch(operador)
+            {
+                case "+":
+                    resultado = valores.Sum();
+                    display.Text = resultado.ToString();
+                    break;
+                case "-": 
+                    display.Text = "-";
+                    break;
+                case "*":
+                    display.Text = "*";
+                    break;
+                case "/":
+                    display.Text = "/";
+                    break;
+            }
+        }
     }
 }
