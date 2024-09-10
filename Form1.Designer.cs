@@ -370,7 +370,7 @@ namespace Calculadora
             btnHist.Name = "btnHist";
             btnHist.Size = new Size(75, 41);
             btnHist.TabIndex = 22;
-            btnHist.Text = "Hist";
+            btnHist.Text = "Moo";
             btnHist.UseVisualStyleBackColor = false;
             btnHist.Click += btnHist_Click;
             // 

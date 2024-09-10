@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Collections.Generic;
 using System.Drawing.Text;
+using System.Diagnostics.Eventing.Reader;
 
 namespace Calculadora
 {
@@ -162,26 +163,39 @@ namespace Calculadora
 
         private void btnResult_Click(object sender, EventArgs e)
         {
-            //fazer com que seja possivel fazer operações com os valores da lista
-            valores.Add(Double.Parse(input));
-            input = string.Empty;
-            //display.Text = string.Join(operador, valores);
-
-            switch(operador)
+            if (valores.Count > 0)
             {
-                case "+":
-                    resultado = valores.Sum();
-                    display.Text = resultado.ToString();
-                    break;
-                case "-": 
-                    display.Text = "-";
-                    break;
-                case "*":
-                    display.Text = "*";
-                    break;
-                case "/":
-                    display.Text = "/";
-                    break;
+                //fazer com que seja possivel fazer operações com os valores da lista
+                valores.Add(Double.Parse(input));
+                input = string.Empty;
+
+                switch (operador)
+                {
+                    case "+":
+                        resultado = valores.Sum();
+                        display.Text = resultado.ToString();
+                        break;
+                    case "-":
+                        // Armazena apenas o primeiro valor da lista
+                        resultado = valores[0];
+
+                        for (int i = 1; valores.Count > i; i++)
+                        {
+                            resultado -= valores[i];
+                        }
+                        display.Text = resultado.ToString();
+                        break;
+                    case "*":
+                        display.Text = "*";
+                        break;
+                    case "/":
+                        display.Text = "/";
+                        break;
+                }
+            }
+            else
+            {
+                display.Text = "Nenhum valor selecionado";
             }
         }
     }
